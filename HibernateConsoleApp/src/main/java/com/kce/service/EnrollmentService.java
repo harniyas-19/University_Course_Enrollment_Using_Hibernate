@@ -63,7 +63,6 @@ public class EnrollmentService {
 		
 		Enrollment enroll=new Enrollment();
 		
-		enroll.setEnrollmentID(enrollmentDAO.generateEnrollmentID());
 		enroll.setCourseID(courseID);
 		enroll.setStudentID(studentID);
 		enroll.setStudentName(studentName);

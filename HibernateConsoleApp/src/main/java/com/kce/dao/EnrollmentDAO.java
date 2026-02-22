@@ -9,14 +9,6 @@ import com.kce.util.HibernateUtil;
 
 public class EnrollmentDAO {
 	
-    public int generateEnrollmentID() {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "select coalesce(max(e.enrollmentID), 50000) + 1 from Enrollment e";
-        Query<Integer> query = session.createQuery(hql, Integer.class);
-        int id = query.uniqueResult();
-        session.close();
-        return id;
-    }
     public boolean recordEnrollment(Enrollment enroll) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
